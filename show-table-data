@@ -1,0 +1,4 @@
+#! /bin/bash
+# vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
+
+mysql -u root -D "${1?Must declare database}" -e "select * from ${2?Must declare TABLENAME};"

@@ -6,6 +6,9 @@ up:
 	cd ..
 	docker cp ./my.cnf librebooking-db:/root/.my.cnf
 	docker cp run-backup librebooking-db:/usr/local/bin/
+	docker cp list-databases librebooking-db:/usr/local/bin/
+	docker cp list-tables librebooking-db:/usr/local/bin/
+	docker cp describe-table librebooking-db:/usr/local/bin/
 
 down:
 	cd docker
