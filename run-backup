@@ -1,0 +1,6 @@
+#! /usr/bin/bash
+# vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
+
+cd /root
+mysqldump -u root --all-databases --skip-lock-tables > /backup/another.sql
+cp /backup/another.sql /backup1/
