@@ -26,7 +26,7 @@ list-db:
 	docker exec -it librebooking-db list-databases
 
 list-tb:
-	docker exec -it librebooking-db list-tables
+	docker exec -it librebooking-db list-tables ${*}
 
 
 
