@@ -2,6 +2,7 @@
 
 up:
 	cd docker
+	cp ../docker-compose.yml .
 	docker-compose up -d
 	cd ..
 	docker cp ./my.cnf librebooking-db:/root/.my.cnf

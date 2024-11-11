@@ -10,7 +10,7 @@ services:
     volumes:
       - vol-db:/config
       - vol-bu:/backup
-      - /home/sandholm/docker/backup:/backup1
+      - /tmp/backup:/backup1
     environment:
       - PUID=1000
       - PGID=1000
