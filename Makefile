@@ -18,4 +18,6 @@ down:
 shell:
 	docker exec -it librebooking-db bash
 
+status:
+	docker ps -f "name=libre*"
 
