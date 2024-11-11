@@ -9,6 +9,7 @@ up:
 	docker cp list-databases librebooking-db:/usr/local/bin/
 	docker cp list-tables librebooking-db:/usr/local/bin/
 	docker cp describe-table librebooking-db:/usr/local/bin/
+	docker cp show-table-data librebooking-db:/usr/local/bin/
 
 down:
 	cd docker
