@@ -22,3 +22,11 @@ shell:
 status:
 	docker ps -f "name=libre*"
 
+list-databases:
+	docker exec -it librebooking-db list-databases
+
+list-tables:
+	docker exec -it librebooking-db list-tables
+
+
+
