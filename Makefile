@@ -26,7 +26,7 @@ dbshell:
 	docker exec -it librebooking-db bash
 
 # open a docker shell to the php instance
-phpshell:
+appshell:
 	docker exec -it librebooking bash
 
 # get docker status of our libre processes
