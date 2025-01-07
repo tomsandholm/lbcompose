@@ -16,6 +16,22 @@ up:
 	docker cp show-table-data librebooking-db:/usr/local/bin/
 	docker cp run-app-backup librebooking:/usr/local/bin
 
+# get db config file
+get-db-config:
+	docker cp librebooking-db:/config/custom.cnf ./custom.cnf
+
+# put db config file
+put-db-config:
+	docker cp custom.cnf librebooking-db:/config/custom.cnf
+
+# get app config file
+get-app-config:
+	docker cp librebooking:/config/config.php ./config.php
+
+# put app config file
+put-app-config:
+	docker cp config.php librebooking:/config/config.php
+
 # shutdown everything
 down:
 	cd docker
@@ -57,3 +73,4 @@ db-backup:
 # run app backup
 app-backup:
 	docker exec -it librebooking run-app-backup
+
