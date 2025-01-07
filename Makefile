@@ -9,11 +9,12 @@ up:
 	docker-compose up -d
 	cd ..
 	docker cp ./my.cnf librebooking-db:/root/.my.cnf
-	docker cp run-backup librebooking-db:/usr/local/bin/
+	docker cp run-db-backup librebooking-db:/usr/local/bin/
 	docker cp list-databases librebooking-db:/usr/local/bin/
 	docker cp list-tables librebooking-db:/usr/local/bin/
 	docker cp describe-table librebooking-db:/usr/local/bin/
 	docker cp show-table-data librebooking-db:/usr/local/bin/
+	docker cp run-app-backup librebooking:/usr/local/bin
 
 # shutdown everything
 down:
@@ -44,4 +45,6 @@ list-tb:
 show-tb:
 	docker exec -it librebooking-db show-table-data $(DB) $(table)
 
-
+# run db backup
+db-backup:
+	docker exec -it librebooking-db run-db-backup

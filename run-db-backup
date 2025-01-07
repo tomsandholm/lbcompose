@@ -4,3 +4,6 @@
 cd /root
 mysqldump -u root --all-databases --skip-lock-tables > /backup/another.sql
 cp /backup/another.sql /backup1/
+cp /config/custom.cnf /backup1/
+chmod -R 0777 /backup1/*
+

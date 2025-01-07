@@ -9,8 +9,8 @@ services:
       - mynet
     volumes:
       - vol-db:/config
-      - vol-bu:/backup
-      - /tmp/backup:/backup1
+      - vol-db-bu:/backup
+      - /tmp/backup/db:/backup1
     ports:
       - "3306:3306"
     environment:
@@ -33,6 +33,8 @@ services:
       - "80:80"
     volumes:
       - vol-app:/config
+      - vol-app-bu:/backup
+      - /tmp/backup/app:/backup1
     environment: 
       - LB_DB_NAME=librebooking
       - LB_DB_USER=lb_user
@@ -48,10 +50,12 @@ services:
 volumes:
   vol-db:
     name: librebooking_data
+  vol-db-bu:
+    name: librebooking_data_backup
   vol-app:
     name: librebooking_conf
-  vol-bu:
-    name: librebooking_data_backup
+  vol-app-bu:
+    name: librebooking_conf_backup
 
 networks:
   mynet:
