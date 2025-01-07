@@ -11,6 +11,8 @@ services:
       - vol-db:/config
       - vol-bu:/backup
       - /tmp/backup:/backup1
+    ports:
+      - "3306:3306"
     environment:
       - PUID=1000
       - PGID=1000
