@@ -31,6 +31,7 @@ get-app-config:
 # put app config file
 put-app-config:
 	docker cp config.php librebooking:/config/config.php
+	docker exec -it librebooking bash chmod -R 0777 /config/config.php
 
 # shutdown everything
 down:
