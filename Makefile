@@ -48,3 +48,7 @@ show-tb:
 # run db backup
 db-backup:
 	docker exec -it librebooking-db run-db-backup
+
+# run app backup
+app-backup:
+	docker exec -it librebooking run-app-backup
