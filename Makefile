@@ -21,6 +21,11 @@ down:
 	cd docker
 	docker-compose down
 
+# easier 
+restart:
+	make down
+	make up
+
 # open a docker shell to the database instance
 dbshell:
 	docker exec -it librebooking-db bash
