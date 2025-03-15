@@ -23,6 +23,7 @@ services:
       - MYSQL_PASSWORD=mysqluserpsw
   app:
     build:
+      network: host
       context: .
       dockerfile: Dockerfile
     container_name: librebooking

@@ -10,13 +10,13 @@ up:
 	docker-compose up -d --build
 	cd ..
 	docker cp ./my.cnf librebooking-db:/root/.my.cnf
-	docker cp ./config.php librebooking:/config/
 	docker cp run-db-backup librebooking-db:/usr/local/bin/
 	docker cp list-databases librebooking-db:/usr/local/bin/
 	docker cp list-tables librebooking-db:/usr/local/bin/
 	docker cp describe-table librebooking-db:/usr/local/bin/
 	docker cp show-table-data librebooking-db:/usr/local/bin/
 	docker cp run-app-backup librebooking:/usr/local/bin
+	make put-app-config
 
 # get db config file
 get-db-config:
@@ -32,8 +32,8 @@ get-app-config:
 
 # put app config file
 put-app-config:
+	sudo chown www-data:www-data config.php
 	docker cp config.php librebooking:/config/config.php
-	docker exec -it librebooking bash chmod -R 0777 /config/config.php
 
 # shutdown everything
 down:
