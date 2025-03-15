@@ -6,9 +6,11 @@ DB = "librebooking"
 up:
 	cd docker
 	cp ../docker-compose.yml .
-	docker-compose up -d
+	cp ../Dockerfile .
+	docker-compose up -d --build
 	cd ..
 	docker cp ./my.cnf librebooking-db:/root/.my.cnf
+	docker cp ./config.php librebooking:/config/
 	docker cp run-db-backup librebooking-db:/usr/local/bin/
 	docker cp list-databases librebooking-db:/usr/local/bin/
 	docker cp list-tables librebooking-db:/usr/local/bin/

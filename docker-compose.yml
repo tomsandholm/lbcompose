@@ -22,7 +22,9 @@ services:
       - MYSQL_USER=lb_user
       - MYSQL_PASSWORD=mysqluserpsw
   app:
-    image: librebooking/librebooking:develop
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: librebooking
     restart: always
     depends_on:
