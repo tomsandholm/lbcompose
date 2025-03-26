@@ -18,6 +18,7 @@ up:
 	docker cp run-app-backup librebooking:/usr/local/bin
 	make put-app-config
 
+
 # get db config file
 get-db-config:
 	docker cp librebooking-db:/config/custom.cnf ./custom.cnf

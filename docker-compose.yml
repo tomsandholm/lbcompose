@@ -38,6 +38,8 @@ services:
       - vol-app:/config
       - vol-app-bu:/backup
       - /tmp/backup/app:/backup1
+    extra_hosts:
+      - "beast4.tsand.org:10.0.0.215"
     environment: 
       - LB_DB_NAME=librebooking
       - LB_DB_USER=lb_user
@@ -49,7 +51,6 @@ services:
       - LB_LOG_LEVEL=debug
       - LB_LOG_SQL=false
       - TZ=America/New_York
-
 volumes:
   vol-db:
     name: librebooking_data
