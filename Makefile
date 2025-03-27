@@ -7,7 +7,7 @@ up:
 	cd docker
 	cp ../docker-compose.yml .
 	cp ../Dockerfile .
-	docker-compose up -d --build
+	docker compose up -d --build
 	cd ..
 	docker cp ./my.cnf librebooking-db:/root/.my.cnf
 	docker cp run-db-backup librebooking-db:/usr/local/bin/
