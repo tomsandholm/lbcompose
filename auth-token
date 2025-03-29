@@ -12,7 +12,7 @@
 # 
 
 
-curl -sS -X POST \
+curl -s -X POST \
   "http://booked.tsand.org/Web/Services/index.php/Authentication/Authenticate" \
   -H "Content-Type: application/json" \
   -d "{ $(<~/.booked.auth) }"
