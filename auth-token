@@ -3,10 +3,16 @@
 
 # this program will use curl to perform a REST call
 # into booked services to obtain a sessionToken
+# the authentication username and password are put in ~/.booked.auth
+# ~/.booked.auth:
+#      "username":"admin",
+#      "password":"somepassword"
+# 
+# this file MUST be user perms protected.
+# 
+
+
 curl -sS -X POST \
   "http://booked.tsand.org/Web/Services/index.php/Authentication/Authenticate" \
   -H "Content-Type: application/json" \
-  -d '{
-    "username":"admin",
-	"password":"theresa1"
-  }'
+  -d "{ $(<~/.booked.auth) }"
