@@ -1,8 +1,0 @@
-#! /usr/bin/bash
-# vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
-
-BOOKED_SERVER="booked.tsand.org"
-
-export SESSION_TOKEN=$( curl -s  -H "Content-type: application/json"   -d @/home/sandholm/auth.json   https://$BOOKED_SERVER/Web/Services/index.php/Authentication/Authenticate | jq -r '.| .sessionToken' )
-
-echo "SESSION_TOKEN: ${SESSION_TOKEN}"
