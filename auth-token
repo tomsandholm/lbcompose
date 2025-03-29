@@ -1,6 +1,8 @@
 #! /usr/bin/bash
 # vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
 
+# this program will use curl to perform a REST call
+# into booked services to obtain a sessionToken
 curl -sS -X POST \
   "http://booked.tsand.org/Web/Services/index.php/Authentication/Authenticate" \
   -H "Content-Type: application/json" \
