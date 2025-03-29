@@ -1,0 +1,21 @@
+#! /usr/bin/bash
+# vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
+
+
+out=$(./auth-token | jq '.sessionToken,.userId' | paste - - )
+echo "raw out: $out"
+read token userid <<< $out
+echo "out: $out"
+echo "token: $token"
+echo "userid: $userid"
+
+
+curl -X POST \
+  "http://booked.tsand.org/Web/Services/index.php/Users/:${userid}/Password" \
+  -H "X-Booked-SessionToken: ${token}" \
+  -H "X-Booked-UserId: ${token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+	"password":"changeme"
+  }'
+

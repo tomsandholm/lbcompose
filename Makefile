@@ -19,6 +19,16 @@ up:
 	make put-app-config
 
 
+# shutdown everything
+down:
+	cd docker
+	docker compose down
+
+# easier 
+restart:
+	make down
+	make up
+
 # get db config file
 get-db-config:
 	docker cp librebooking-db:/config/custom.cnf ./custom.cnf
@@ -35,16 +45,6 @@ get-app-config:
 put-app-config:
 	sudo chown www-data:www-data config.php
 	docker cp config.php librebooking:/config/config.php
-
-# shutdown everything
-down:
-	cd docker
-	docker-compose down
-
-# easier 
-restart:
-	make down
-	make up
 
 # open a docker shell to the database instance
 dbshell:

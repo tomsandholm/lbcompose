@@ -1,0 +1,10 @@
+#! /usr/bin/bash
+# vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
+
+curl -sS -X POST \
+  "http://booked.tsand.org/Web/Services/index.php/Authentication/Authenticate" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username":"admin",
+	"password":"theresa1"
+  }'
