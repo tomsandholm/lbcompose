@@ -15,4 +15,4 @@ curl -s \
   -H "X-Booked-SessionToken:${token}" \
   -H "X-Booked-UserId:${userid}" \
   -H "Content-Type:application/json" \
-  -d @${1} "http://booked.tsand.org/Web/Services/index.php/Users/" | jq
+  -d @${1?Must specify users-request-file} "http://booked.tsand.org/Web/Services/index.php/Users/" | jq
