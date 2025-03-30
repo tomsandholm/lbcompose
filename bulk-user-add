@@ -9,12 +9,12 @@ do
 	OOIFS=$IFS
 	IFS='|'
 	set $x
-	echo "PASSWORD: $1"
-	echo "FIRSTNAME: $2"
-	echo "LASTNAME: $3"
-	echo "EMAILADDRESS: $4"
-	echo "USERNAME: $5"
-	echo "UID: $6"
+	#echo "PASSWORD: $1"
+	#echo "FIRSTNAME: $2"
+	#echo "LASTNAME: $3"
+	#echo "EMAILADDRESS: $4"
+	#echo "USERNAME: $5"
+	#echo "UID: $6"
 	# create the student request file
 	sed "s/\(<PASSWORD>\)/$1/g" user-form.tmpl > ${6}-tmp1.req
 	sed "s/\(<FIRSTNAME>\)/$2/g" ${6}-tmp1.req > ${6}.req
