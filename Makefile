@@ -78,3 +78,8 @@ db-backup:
 app-backup:
 	docker exec -it librebooking run-app-backup
 
+show-app-log:
+	docker exec -it librebooking cat /var/log/librebooking/app.log
+
+show-app-sql-log:
+	docker exec -it librebooking cat /var/log/librebooking/sql.log
