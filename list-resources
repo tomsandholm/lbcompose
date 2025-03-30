@@ -1,0 +1,16 @@
+#! /usr/bin/bash
+# vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
+
+
+# get our authorization token and userid
+read token userid <<< $(./auth-token | jq '.sessionToken,.userId' | sed 's/"//g' | paste - - )
+
+# call the WebServices to list all users
+# need to pass in our authentication.
+# format the output as "id=x username=y"
+curl -sS \
+  -H "X-Booked-SessionToken:${token}" \
+  -H "X-Booked-UserId:${userid}" \
+  -H "Content-Type:application/json" \
+  "http://booked.tsand.org/Web/Services/index.php/Resources/" | \
+  jq 
